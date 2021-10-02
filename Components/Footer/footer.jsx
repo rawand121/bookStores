@@ -19,7 +19,7 @@ const Footer = () => {
       }}
     >
       <div className={classes.footerRow + " row"}>
-        <div className={"col-sm-12 col-md-6 " + router.locale ==='English' ? "ms-auto" : "me-auto"}>
+        <div className={"col-sm-12 col-md-6 " + router.locale ==='English' ? null : "me-auto"}>
           <p className={classes.textDiv}>{t.footerDescription}</p>
         </div>
         <div className="col-sm-12 col-md-5 text-end">
