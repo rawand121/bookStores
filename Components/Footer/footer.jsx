@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import classes from "./footer.module.css";
+import Image from "next/image";
 
 import en from "../../translate/english";
 import ku from "../../translate/kurdish";
