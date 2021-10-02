@@ -96,8 +96,7 @@ const AddProd = (props) => {
             className="form-select"
             aria-label="Default select example"
             htmlFor="Lang"
-            defaultValue="Kurdish"
-            onChange={(e) => setLang(e.target.value)}
+             onChange={(e) => setLang(e.target.value)}
           >
             <option value="Kurdish">کوردی</option>
             <option value="English">ئینگلیزی</option>

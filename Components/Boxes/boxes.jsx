@@ -4,7 +4,7 @@ import English from "../../translate/english";
 import Kurdish from "../../translate/kurdish";
 import Arabic from "../../translate/arabic";
 
-const boxes = () => {
+const Boxes = () => {
   const { locale } = useRouter();
   const t =
     locale === "English" ? English : locale === "Kurdish" ? Kurdish : Arabic;
@@ -87,4 +87,4 @@ const boxes = () => {
   );
 };
 
-export default boxes;
+export default Boxes;

@@ -1,10 +1,8 @@
-import Link from "next/link";
-import { useState, useEffect } from "react";
+ import { useState, useEffect } from "react";
 import Modal from "react-modal";
 import { toast } from "react-toastify";
 import axios from "axios";
-import { set } from "mongoose";
-
+ 
 const customStyles = {
   content: {
     top: "50%",

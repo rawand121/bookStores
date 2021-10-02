@@ -20,7 +20,7 @@ const customStyles = {
 
 Modal.setAppElement("#modalApp");
 
-const userBooks = (props) => {
+const UserBooks = (props) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [opened, setOpened] = useState(null);
   const [books, setBooks] = useState();
@@ -295,4 +295,4 @@ const userBooks = (props) => {
   );
 };
 
-export default userBooks;
+export default UserBooks;

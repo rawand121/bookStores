@@ -3,7 +3,7 @@ import English from "../../translate/english";
 import Kurdish from "../../translate/kurdish";
 import Arabic from "../../translate/arabic";
 
-const orders = (props) => {
+const Orders = (props) => {
   const {locale} = useRouter()
   const t =
     locale === "English" ? English : locale === "Kurdish" ? Kurdish : Arabic;
@@ -68,4 +68,4 @@ const orders = (props) => {
   );
 };
 
-export default orders;
+export default Orders;

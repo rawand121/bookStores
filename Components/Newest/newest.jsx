@@ -6,7 +6,7 @@ import Kurdish from "../../translate/kurdish";
 import Arabic from "../../translate/arabic";
 
 
-const newest = () => {
+const Newest = () => {
   const { books } = useSelector((state) => state.Latest);
   const {locale} = useRouter()
   const t =
@@ -24,4 +24,4 @@ const newest = () => {
   );
 };
 
-export default newest;
+export default Newest;

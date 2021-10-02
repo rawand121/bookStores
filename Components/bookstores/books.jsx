@@ -65,7 +65,7 @@ const Books = (props) => {
         <tbody>
           {props.books.map((book) => {
             return (
-              <tr>
+              <tr key={book._id}>
                 <td scope="col">{book.name}</td>
                 <td scope="col">{book.bookStore.name}</td>
                 <td scope="col">{book.price}</td>
