@@ -3,7 +3,7 @@ import classes from './header.module.css'
 const header = () => {
     return (
         <div>
-            <img className={classes.bgImg} src="./images/background.jpg" />
+            <img className={classes.bgImg} src="./images/Background.jpg" />
         </div>
     );
 }
