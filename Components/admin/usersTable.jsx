@@ -1,6 +1,5 @@
-import axios from "axios";
-import { mutate } from "swr";
-import { useState, useEffect } from "react";
+import axios from "../../AxiosConfig";
+ import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import Modal from "react-modal";
 

@@ -1,11 +1,11 @@
 import * as t from "./actionType";
-import axios from "axios";
+import axios from "../../AxiosConfig";
 
 export const getLatest = () => {
   return async (dispatch) => {
     dispatch(getLatestReq());
     try {
-      const { data } = await axios.get(`http://localhost:3000/api/latest`);
+      const { data } = await axios.get(`/api/latest`);
       dispatch(getLastSuccess(data));
     } catch (err) {
       console.log(err);

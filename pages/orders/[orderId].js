@@ -1,7 +1,7 @@
 import Layout from "../../Components/layout/layout";
 import Footer from "../../Components/Footer/footer";
 import Spinner from "../../Components/spinner/Spinner";
-import axios from "axios";
+import axios from "../../AxiosConfig";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import UserDetails from "../../Components/detailOrder/userDetails";

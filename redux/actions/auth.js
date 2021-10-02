@@ -1,5 +1,5 @@
 import * as t from "./actionType";
-import axios from "axios";
+import axios from "../../AxiosConfig";
 
 export const registerUser = (user) => {
   return async (dispatch) => {

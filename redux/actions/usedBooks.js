@@ -1,12 +1,12 @@
 import * as t from "./actionType";
-import axios from "axios";
+import axios from "../../AxiosConfig";
 
 export const getUsedBooks = (page, name, writer, category) => {
   return async (dispatch) => {
     try {
-      let url = `http://localhost:3000/api/usedBooks?page=${page}&limit=8`;
+      let url = `/api/usedBooks?page=${page}&limit=8`;
       if (name) {
-        url = `http://localhost:3000/api/usedBooks?page=${page}&limit=8&name=${name}`;
+        url = `/api/usedBooks?page=${page}&limit=8&name=${name}`;
       }
       if (writer) url = url.concat(`&writer=${writer}`);
       if (category) url = url.concat(`&category=${category}`);

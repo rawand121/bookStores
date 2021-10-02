@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import Spinner from "../spinner/Spinner";
 import { useRouter } from "next/router";
-import axios from "axios";
+import axios from "../../AxiosConfig";
 import English from "../../translate/english";
 import Kurdish from "../../translate/kurdish";
 import Arabic from "../../translate/arabic";

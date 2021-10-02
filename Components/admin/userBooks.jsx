@@ -1,7 +1,7 @@
 import { MDBDataTable } from "mdbreact";
 import Modal from "react-modal";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../../AxiosConfig";
 import { toast } from "react-toastify";
 import useSwr, { mutate } from "swr";
 

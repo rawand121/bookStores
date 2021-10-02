@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../../AxiosConfig";
 import Spinner from "../../Components/spinner/Spinner";
 import useSWR, { mutate } from "swr";
 import Modal from "react-modal";

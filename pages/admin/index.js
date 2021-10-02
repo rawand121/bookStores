@@ -2,7 +2,7 @@ import Layout from "../../Components/layout/layout";
 import Footer from "../../Components/Footer/footer";
 import { getSession } from "next-auth/client";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../../AxiosConfig";
 import AdminSidebar from "../../Components/admin/sidebar";
 import AdminComponentBoxes from "../../Components/admin/boxes";
 import AdminChart from "../../Components/admin/chart";

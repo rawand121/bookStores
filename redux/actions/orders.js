@@ -1,5 +1,5 @@
 import * as t from "./actionType";
-import axios from "axios";
+import axios from "../../AxiosConfig";
 
 export const setOrder = (address, note) => {
   return async (dispatch) => {
@@ -20,7 +20,7 @@ export const setOrder = (address, note) => {
             qty: prod.quantity,
           });
         });
-        await axios.post(`http://localhost:3000/api/order`, {
+        await axios.post(`/api/order`, {
           address,
           orders,
           note,

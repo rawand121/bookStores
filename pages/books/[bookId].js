@@ -2,7 +2,7 @@ import Layout from "../../Components/layout/layout";
 import Footer from "../../Components/Footer/footer";
 import BookDetails from "../../Components/bookDetails/details";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../../AxiosConfig";
 import { useRouter } from "next/router";
 import Spinner from "../../Components/spinner/Spinner";
 import Image from "next/image";

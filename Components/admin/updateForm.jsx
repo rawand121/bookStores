@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+import axios from "../../AxiosConfig";
 import Spinner from "../spinner/Spinner";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";

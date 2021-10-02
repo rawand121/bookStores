@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../../../../AxiosConfig";
 import { getSession } from "next-auth/client";
 import Link from "next/link";
 

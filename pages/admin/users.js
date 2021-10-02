@@ -2,7 +2,7 @@ import Layout from "../../Components/layout/layout";
 import Footer from "../../Components/Footer/footer";
 import { getSession } from "next-auth/client";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../../AxiosConfig";
 import AdminSidebar from "../../Components/admin/sidebar";
 import Spinner from "../../Components/spinner/Spinner";
 import UsersTable from "../../Components/admin/usersTable";

@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../../AxiosConfig";
 import { useEffect, useState } from "react";
 import Spinner from "../spinner/Spinner";
 import Link from "next/link";
