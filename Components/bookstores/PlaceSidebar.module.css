@@ -1,0 +1,37 @@
+.sidebar {
+  background-color: #502e2d;
+  margin: 0;
+  padding: 40px 0;
+  color: #e7a545;
+  height: 94vh;
+}
+
+.sidenav {
+  margin: 0 auto;
+  padding: 0 !important;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.sidenav li {
+  padding: 10px 8px;
+  margin: 10px 0;
+  font-size: 1.5rem;
+  width: 100%;
+  transition: transform 0.3s;
+}
+
+.sidenav li:hover {
+  transform: scale(1.1);
+}
+
+.sidenav li a {
+  color: #fff;
+  display: inline-block;
+  /* margin: 0 !important; */
+  margin-right: 20px;
+}
+
+.activeLink {
+  color: #fbad19 !important;
+}

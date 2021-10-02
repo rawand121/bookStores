@@ -1,0 +1,96 @@
+import booksModel from "../models/book";
+import ErrorHandler from "../utils/errorHandler";
+import dbConfig from "../config/dbConfig";
+
+const fetchAllBooks = async (req, res, next) => {
+  try {
+    // IF REMOVE THIS, I GET ERROR FOR FIRST TIME IF PRE RENDER A PAGE
+    await dbConfig();
+
+    let books, itemCount;
+    const { name, writer, category } = req.query;
+    let query = {};
+    if (name) query = { name: name };
+    if (writer) query = { ...query, writer: writer };
+    if (category) query = { ...query, category: category };
+    [books, itemCount] = await Promise.all([
+      booksModel
+        .find(query)
+        .skip(
+          parseInt(req.query.page) * parseInt(req.query.limit) -
+            parseInt(req.query.limit)
+        )
+        .limit(parseInt(req.query.limit))
+        .populate({
+          path: "bookStore",
+        })
+        .sort({ createdAt: -1 })
+        .exec(),
+      booksModel.count(),
+    ]);
+    const pageCount = Math.ceil(itemCount / parseInt(req.query.limit));
+
+    if (books.length === 0) {
+      return next(
+        new ErrorHandler("Nothing Found match with your search :( ", 404)
+      );
+    }
+
+    res.json({
+      books,
+      pageCount,
+      itemCount,
+    });
+  } catch (err) {
+    console.log("FETCH", err);
+    next(new ErrorHandler(err.message, 500));
+  }
+};
+
+const getABook = async (req, res, next) => {
+  try {
+    const bookId = req.query.bookId;
+    const book = await booksModel.findById(bookId);
+    if (!book) {
+      return next(
+        new ErrorHandler("No Book Found with this id, please try again", 404)
+      );
+    }
+    res.status(200).json(book);
+  } catch (err) {
+    if (err.message.indexOf("Cast to ObjectId failed") !== -1)
+      return next(new ErrorHandler("Data Not Found", 404));
+
+    return next(new ErrorHandler(err.message, 500));
+  }
+};
+
+const relatedBooks = async (req, res, next) => {
+  try {
+    const { category, bookId } = req.query;
+    const books = await booksModel.find({
+      $and: [{ category }, { _id: { $ne: bookId } }],
+    });
+    res.status(200).json({
+      books: [books[0], books[1], books[2], books[3]],
+    });
+  } catch (err) {
+    console.log("RELATED", err);
+    next(new ErrorHandler(err.message, 500));
+  }
+};
+
+const getLatest = async (req, res, next) => {
+  try {
+    await dbConfig();
+    const books = await booksModel.find({}).sort({ createdAt: -1 });
+    res.status(200).json({
+      books: [books[0], books[1], books[2], books[3], books[4]],
+    });
+  } catch (err) {
+    console.log("LATEST", err);
+    next(new ErrorHandler(err.message, 500));
+  }
+};
+
+export { fetchAllBooks, getABook, relatedBooks, getLatest };

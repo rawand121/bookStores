@@ -1,0 +1,44 @@
+.description {
+  font-size: 14px;
+}
+
+.readMoreBtn {
+  cursor: pointer;
+  font-size: 14px;
+  background-color: #502e2d;
+  color: #e7a545;
+  display: inline-block !important;
+  width: 40%;
+  margin: 0 auto;
+  transition: transform 0.3s;
+}
+
+.readMoreBtn:hover {
+  color: #e7a545;
+}
+
+.readMoreBtn:active {
+  transform: translateY(3px);
+}
+
+.relatedHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.relatedHeader::after {
+  content: "";
+  display: block;
+  background-color: #502e2d;
+  height: 1px;
+  width: 27%;
+}
+
+.relatedHeader::before {
+  content: "";
+  display: block;
+  background-color: #502e2d;
+  height: 1px;
+  width: 27%;
+}

@@ -1,0 +1,15 @@
+.logoDiv {
+  padding: 10px;
+  background-color: #e7a545;
+  margin-left: 30px;
+  display: inline-block;
+  max-height: 100px;
+}
+
+.textDiv {
+  color: #e7a545;
+}
+
+.footerRow {
+  --bs-gutter-x: none !important;
+}
