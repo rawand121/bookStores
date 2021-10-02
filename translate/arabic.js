@@ -87,6 +87,7 @@ const arabicTranslate = {
   getLocation: "احصل على العنوان",
   call: " اتصال",
   relatedBooks: "کـتـێـبـی پـەیـوەنـدیدار",
+  dashboard: "داشبورد",
 };
 
 export default arabicTranslate;

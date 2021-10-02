@@ -20,6 +20,7 @@ export const LoadUser = () => {
       const { data } = await axios.get(`/api/auth/me`);
       dispatch(signinSuccess(data));
     } catch (err) {
+      //HERE IS MAKE A CORS PROBLEM, CAN ADD CORS OR CHANGE BASEURL ON AxiosConfig FILE TO localhost:3000...
       dispatch(signinFail(err.response.data.message));
     }
   };

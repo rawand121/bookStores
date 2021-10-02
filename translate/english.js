@@ -83,6 +83,8 @@ booksTitle: "See All Books",
   getLocation: "Get location",
   call: "Call",
   relatedBooks: "Related Books",
+  dashboard: "Dashboard",
+
 };
 
 export default englishTranslate;

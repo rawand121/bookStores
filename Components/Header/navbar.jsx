@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import { signOut } from "next-auth/client";
@@ -25,7 +26,15 @@ const Header = (props) => {
     >
       <div className="container-fluid">
         <Link href="/">
-          <a className="navbar-brand">Logo</a>
+          <a className="navbar-brand">
+            <Image
+              src='/images/Logo.png'
+              height='50px'
+              width= '50px'
+              quality='100'
+              layout='fixed'
+            />
+          </a>
         </Link>
         <div className={router.locale ==='English' ? "ms-auto" : "me-auto"}>
           <button
@@ -63,7 +72,7 @@ const Header = (props) => {
                   <li className="nav-item">
                     <Link href="/bookstore">
                       <a className="nav-link active" aria-current="page">
-                        Dashboard
+                        {t.dashboard}
                       </a>
                     </Link>
                   </li>

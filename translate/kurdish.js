@@ -83,6 +83,7 @@ const kurdishTranslate = {
   getLocation: "ناونیشان وەربگرە",
   call: "پەیوەندی بکە",
   relatedBooks: "کـتـێـبـی پـەیـوەنـدیدار",
+  dashboard: "داشبۆڕد",
 
 };
 
