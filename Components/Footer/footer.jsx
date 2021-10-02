@@ -19,10 +19,10 @@ const Footer = () => {
       }}
     >
       <div className={classes.footerRow + " row"}>
-        <div className={"col-sm-12 col-md-6 " + router.locale ==='English' ? null : "me-auto"}>
+        <div className={"col-sm-12 col-md-6 "}>
           <p className={classes.textDiv}>{t.footerDescription}</p>
         </div>
-        <div className="col-sm-12 col-md-5 text-end">
+        <div className={ 'col-sm-12 col-md-5 ' + router.locale !== 'English' ? 'me-auto text-start ' : "  text-end"}>
           <div className={classes.logoDiv}>
             <Image 
               src='/images/Logo.png'
