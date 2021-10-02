@@ -18,11 +18,18 @@ const Footer = () => {
       }}
     >
       <div className={classes.footerRow + " row"}>
-        <div className="col-sm-12 col-md-6">
+        <div className={"col-sm-12 col-md-6 " + router.locale ==='English' ? "ms-auto" : "me-auto"}>
           <p className={classes.textDiv}>{t.footerDescription}</p>
         </div>
         <div className="col-sm-12 col-md-5 text-end">
-          <div className={classes.logoDiv}>LOGO</div>
+          <div className={classes.logoDiv}>
+            <Image 
+              src='/images/Logo.png'
+              height='50px'
+              width='50px'
+              quality='100'
+            />
+          </div>
         </div>
       </div>
       <hr style={{ backgroundColor: "#e7a545" }} />
