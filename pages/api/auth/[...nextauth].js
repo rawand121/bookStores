@@ -5,7 +5,7 @@ import User from "../../../Backend/models/user";
 import BookStoreModel from "../../../Backend/models/bookStore";
 import dbConnection from "../../../Backend/config/dbConfig";
 import bcrypt from "bcrypt";
-import cors from 'cors'
+import cors from "cors";
 
 export default NextAuth({
   session: {
@@ -24,7 +24,14 @@ export default NextAuth({
 
         let endpoint = await User.findOne({ email }).select("+password");
 
-        if (credentials.callbackUrl === "https://book-stores.vercel.app/signin-store") {
+        if (
+          credentials.callbackUrl ===
+            "https://book-stores.vercel.app/signin-store" ||
+          credentials.callbackUrl ===
+            "https://book-stores.vercel.app/Arabic/signin-store" ||
+          credentials.callbackUrl ===
+            "https://book-stores.vercel.app/Kurdish/signin-store"
+        ) {
           endpoint = await BookStoreModel.findOne({ email });
         }
 
