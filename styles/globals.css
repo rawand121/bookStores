@@ -165,7 +165,7 @@ table tbody[data-test="table-body"] tr td:nth-of-type(7) {
   display: none;
 }
 
-.offcanvas-end{
+.offcanvas-end {
   width: 250px !important;
 }
 
@@ -185,9 +185,10 @@ table tbody[data-test="table-body"] tr td:nth-of-type(7) {
   .newestBooks {
     text-align: center;
   }
-  .contactForm label{
+  .contactForm label,
+  .searchForm label {
     font-size: 12px;
-    margin-right: 20px;
+    margin: 0 20px;
   }
 }
 @media only screen and (max-width: 580px) {
@@ -196,5 +197,8 @@ table tbody[data-test="table-body"] tr td:nth-of-type(7) {
   }
   .allBoxes .card {
     margin: 15px auto;
+  }
+  .eachBook > div {
+    text-align: center;
   }
 }

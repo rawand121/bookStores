@@ -88,6 +88,7 @@ const arabicTranslate = {
   call: " اتصال",
   relatedBooks: "کـتـێـبـی پـەیـوەنـدیدار",
   dashboard: "داشبورد",
+  writer: "كاتب",
 };
 
 export default arabicTranslate;

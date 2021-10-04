@@ -84,7 +84,7 @@ booksTitle: "See All Books",
   call: "Call",
   relatedBooks: "Related Books",
   dashboard: "Dashboard",
-
+  writer : 'Writer'
 };
 
 export default englishTranslate;

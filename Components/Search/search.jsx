@@ -35,14 +35,14 @@ const Search = () => {
     <div className="my-5">
       <h2 className="text-center mb-4">{t.headerSearch}</h2>
       <div className="mx-auto w-50">
-        <form>
+        <form className='searchForm'>
           <div className="mb-3 d-flex align-items-center">
             <label
               htmlFor="bookName"
               className="form-label"
               style={{ width: "20%" }}
             >
-              {t.bookName} :
+              {t.bookName}
             </label>
             <input
               type="text"
@@ -58,7 +58,7 @@ const Search = () => {
               className="form-label"
               style={{ width: "20%" }}
             >
-              Writer :
+              {t.writer}
             </label>
             <input
               type="text"
@@ -74,7 +74,7 @@ const Search = () => {
               className="form-label"
               style={{ width: "20%" }}
             >
-              {t.categorySection} :
+              {t.categorySection}
             </label>
             <select
               className="form-select"
@@ -93,7 +93,7 @@ const Search = () => {
               className="form-label"
               style={{ width: "20%" }}
             >
-              {t.usedBooks} :
+              {t.usedBooks}
             </label>
             <select
               className="form-select"

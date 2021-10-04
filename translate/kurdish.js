@@ -84,7 +84,7 @@ const kurdishTranslate = {
   call: "پەیوەندی بکە",
   relatedBooks: "کـتـێـبـی پـەیـوەنـدیدار",
   dashboard: "داشبۆڕد",
-
+  writer : 'نوسەر'
 };
 
 export default kurdishTranslate;

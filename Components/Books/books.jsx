@@ -25,7 +25,7 @@ const Books = () => {
     return (
       <div className="my-5">
         <h2 className="text-center">{t.allBooks}</h2>
-        <div className="row my-4">
+        <div className="row justify-content-sm-center my-4">
           {books.books.map((post) => {
             return <Post key={post._id} book={post} />;
           })}

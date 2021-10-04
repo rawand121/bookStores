@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const post = (props) => {
   return (
-    <div className="col-sm-6 col-md-3">
+    <div className="col-xs-12 col-sm-5 col-md-3 eachBook">
       <Link href={`/books/${props.book._id}`}>
         <div style={{ cursor: "pointer" }}>
           <Image
