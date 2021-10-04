@@ -140,7 +140,9 @@ const approveBook = async (req, res, next) => {
 
 const getBook = async (req, res, next) => {
   try {
-    const usedBook = await UsedBooks.findById(req.query.bookId);
+    const usedBook = await UsedBooks.findById(req.query.bookId).populate({
+      path: "author",
+    });
     if (!usedBook) {
       return next(new ErrorHandler("Sorry This Book Not Found", 404));
     }

@@ -10,7 +10,7 @@ const Boxes = () => {
     locale === "English" ? English : locale === "Kurdish" ? Kurdish : Arabic;
 
   return (
-    <div className="row">
+    <div className="row allBoxes">
       <h2 className="text-center mb-5 mt-3">{t.whatcanYoudo}</h2>
       <div className="col-xs-12 col-sm-6 col-lg-4 ">
         <div className="card" style={{ width: "18rem" }}>

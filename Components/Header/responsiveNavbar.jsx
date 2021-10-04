@@ -1,49 +1,100 @@
-import Link from "next/link";
-import Image from "next/image";
 import { useRouter } from "next/router";
+import kurdishTranslate from "../../translate/kurdish";
+import EnglishTranslate from "../../translate/english";
+import ArabicTranslate from "../../translate/arabic";
 import { useSelector } from "react-redux";
 import { signOut } from "next-auth/client";
-import ResponsiveNavbar from "./responsiveNavbar";
-import English from "../../translate/english";
-import Kurdish from "../../translate/kurdish";
-import Arabic from "../../translate/arabic";
+import classes from "./header.module.css";
 
-const Header = (props) => {
+import Link from "next/link";
+
+const responsiveNavbar = () => {
   const router = useRouter();
-  const languages = router.locales;
   const { user } = useSelector((state) => state.Auth);
+  const languages = router.locales;
+
   const t =
     router.locale === "English"
-      ? English
+      ? EnglishTranslate
       : router.locale === "Kurdish"
-      ? Kurdish
-      : Arabic;
-
+      ? kurdishTranslate
+      : ArabicTranslate;
   const logoutUser = () => {
     signOut();
   };
 
   return (
-    <nav
-      className="navbar navbar-expand-lg"
-      style={props.admin ? { display: "none" } : {}}
-    >
+    <nav className="navbar navbar-light bg-transparent mt-3  NavbarMob">
       <div className="container-fluid">
-        <Link href="/">
-          <a className="navbar-brand">
-            <Image
-              src="/images/Logo.png"
-              height="50px"
-              width="50px"
-              quality="100"
-              layout="fixed"
-            />
-          </a>
-        </Link>
-        <div className={router.locale === "English" ? "ms-auto" : "me-auto"}>
-          <ResponsiveNavbar />
-          <div className="navbar2">
+        <button
+          className={`${
+            router.locale === "English" ? "ms-auto" : "me-auto"
+          } d-block navbar-toggler`}
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div
+          className="offcanvas offcanvas-end"
+          tabIndex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <div className="offcanvas-body">
             <ul className="navbar-nav">
+              <li className={classes.listItemNavbar + " mx-3"}>
+                <Link href="/">
+                  <a className={classes.navLink}>{t.headerHome}</a>
+                </Link>
+              </li>
+              <li className={classes.listItemNavbar + " mx-3"}>
+                <Link href="/books">
+                  <a className={classes.navLink}>{t.allBooks}</a>
+                </Link>
+              </li>
+              {user && !user.address && (
+                <>
+                  <li className={classes.listItemNavbar + " mx-3"}>
+                    <Link href="/orders">
+                      <a className={classes.navLink}>{t.headerMyorders}</a>
+                    </Link>
+                  </li>
+                  <li className={classes.listItemNavbar + " mx-3"}>
+                    <Link href="/profile">
+                      <a className={classes.navLink}>{t.profileHeader}</a>
+                    </Link>
+                  </li>
+                  <li className={classes.listItemNavbar + " mx-3"}>
+                    <Link href="/seller">
+                      <a className={classes.navLink}>{t.headerBeseller}</a>
+                    </Link>
+                  </li>
+                </>
+              )}
+              <li className={classes.listItemNavbar + " mx-3"}>
+                <Link href="/search">
+                  <a className={classes.navLink}>{t.headerSearch}</a>
+                </Link>
+              </li>
+              <li className={classes.listItemNavbar + " mx-3"}>
+                <Link href="/used-books">
+                  <a className={classes.navLink}>{t.usedBooks}</a>
+                </Link>
+              </li>
+              <li className={classes.listItemNavbar + " mx-3"}>
+                <Link href="/contact-us">
+                  <a className={classes.navLink}>{t.headerContactus}</a>
+                </Link>
+              </li>
+              <li className={classes.listItemNavbar + " mx-3"}>
+                <Link href="/about">
+                  <a className={classes.navLink}>{t.headerAbout}</a>
+                </Link>
+              </li>
+              <hr style={{ height: "2px", backgroundColor: "#333" }} />
               {!user ? (
                 <>
                   <li className="nav-item">
@@ -133,4 +184,4 @@ const Header = (props) => {
   );
 };
 
-export default Header;
+export default responsiveNavbar;

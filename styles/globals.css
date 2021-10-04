@@ -6,11 +6,11 @@ body {
   overflow-x: hidden !important;
 }
 
-.rtl{
+.rtl {
   direction: rtl !important;
 }
 
-.ltr{
+.ltr {
   direction: ltr !important;
 }
 
@@ -155,4 +155,47 @@ table thead[data-test="datatable-head"] tr th:nth-of-type(7),
 table tbody[data-test="table-body"] tr td:nth-of-type(7) {
   max-width: 200px !important;
   word-wrap: break-word;
+}
+
+/* CONTACT FORM LABEL RESPONSIVE */
+
+/* NAVBAR RESPONSIVE */
+
+.NavbarMob {
+  display: none;
+}
+
+.offcanvas-end{
+  width: 250px !important;
+}
+
+@media only screen and (max-width: 990px) {
+  .NavbarMob {
+    display: block;
+  }
+  .navbar2 {
+    display: none;
+  }
+}
+@media only screen and (max-width: 770px) {
+  .newestBooksTitle {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .newestBooks {
+    text-align: center;
+  }
+  .contactForm label{
+    font-size: 12px;
+    margin-right: 20px;
+  }
+  
+}
+@media only screen and (max-width: 580px) {
+  .allBoxes {
+    text-align: center;
+  }
+  .allBoxes .card {
+    margin: 15px auto;
+  }
 }

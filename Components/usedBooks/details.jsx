@@ -9,6 +9,7 @@ import Arabic from "../../translate/arabic";
 
 
 const Details = (props) => {
+  console.log(props);
   const {locale} = useRouter()
   const t =
     locale === "English" ? English : locale === "Kurdish" ? Kurdish : Arabic;
@@ -42,9 +43,9 @@ const Details = (props) => {
             {t.categorySection} : {props.book.category}
           </p>
           <p className={classes.property + " my-4"}>{props.book.description}</p>
-          <button className="btn" style={{ width: "20%" }}>
+          <a href={`tel: +964${props.book.author.phoneNumber.toString()}`} className="btn" style={{ width: "20%" }}>
             {t.call}{" "}
-          </button>
+          </a>
         </div>
         <div className="col-sm-12 col-md-4">
           <Image
@@ -52,7 +53,7 @@ const Details = (props) => {
             height="300px"
             width="250px"
             quality="100"
-            alt="Sinuhe"
+            alt={props.book.name}
           />
         </div>
       </div>

@@ -14,7 +14,7 @@ const Navbar2 = (props) => {
 
   const { user } = useSelector((state) => state.Auth);
   return (
-    <div className="container " style={props.admin ? { display: "none" } : {}}>
+    <div className="container navbar2 " style={props.admin ? { display: "none" } : {}}>
       <div className="d-flex">
         <ul
           className="d-flex justify-content-center w-100"

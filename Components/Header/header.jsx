@@ -8,6 +8,7 @@ const Header = (props) => {
     <>
       <Navbar admin={props.admin} />
       <hr
+      className='navbar2'
         style={
           props.admin
             ? { display: "none" }

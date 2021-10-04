@@ -31,7 +31,7 @@ const Books = () => {
         </div>
         <PaginationBar
           pages={books.pageCount}
-          url="http://localhost:3000/used-books"
+          url="https://book-stores.vercel.app/used-books"
         />
       </div>
     );

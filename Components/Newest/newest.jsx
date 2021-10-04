@@ -14,8 +14,8 @@ const Newest = () => {
 
   return (
     <div className="my-5">
-      <h3>{t.latestBooks}</h3>
-      <div className="d-flex justify-content-between my-4">
+      <h3 className='newestBooksTitle'>{t.latestBooks}</h3>
+      <div className="row newestBooks">
         {books.books.map((post) => {
           return <Post key={post._id} post={post} />;
         })}

@@ -85,7 +85,7 @@ const getLatest = async (req, res, next) => {
     await dbConfig();
     const books = await booksModel.find({}).sort({ createdAt: -1 });
     res.status(200).json({
-      books: [books[0], books[1], books[2], books[3], books[4]],
+      books: [books[0], books[1], books[2], books[3], books[4], books[5]],
     });
   } catch (err) {
     console.log("LATEST", err);
