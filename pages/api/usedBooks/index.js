@@ -4,8 +4,7 @@ import {
   getUsedBooks,
 } from "../../../Backend/controllers/usedBooks";
 import isAuth from "../../../Backend/middlewares/isAuth";
-import isAdmin from "../../../Backend/middlewares/isAdmin";
-import onError from "../../../Backend/middlewares/createError";
+ import onError from "../../../Backend/middlewares/createError";
 const handler = nc({ onError });
 
 export const config = {

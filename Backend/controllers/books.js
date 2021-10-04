@@ -7,27 +7,27 @@ const fetchAllBooks = async (req, res, next) => {
     // IF REMOVE THIS, I GET ERROR FOR FIRST TIME IF PRE RENDER A PAGE
     await dbConfig();
 
-    let books, itemCount;
     const { name, writer, category } = req.query;
     let query = {};
     if (name) query = { name: name };
     if (writer) query = { ...query, writer: writer };
     if (category) query = { ...query, category: category };
-    [books, itemCount] = await Promise.all([
-      booksModel
-        .find(query)
-        .skip(
-          parseInt(req.query.page) * parseInt(req.query.limit) -
-            parseInt(req.query.limit)
-        )
-        .limit(parseInt(req.query.limit))
-        .populate({
-          path: "bookStore",
-        })
-        .sort({ createdAt: -1 })
-        .exec(),
-      booksModel.count(),
-    ]);
+
+    const books = await booksModel
+      .find(query)
+      .skip(
+        parseInt(req.query.page) * parseInt(req.query.limit) -
+          parseInt(req.query.limit)
+      )
+      .limit(parseInt(req.query.limit))
+      .populate({
+        path: "bookStore",
+      })
+      .sort({ createdAt: -1 })
+      .exec();
+
+      const itemCount = books.length
+
     const pageCount = Math.ceil(itemCount / parseInt(req.query.limit));
 
     if (books.length === 0) {

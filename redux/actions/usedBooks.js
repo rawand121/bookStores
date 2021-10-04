@@ -11,10 +11,11 @@ export const getUsedBooks = (page, name, writer, category) => {
       if (writer) url = url.concat(`&writer=${writer}`);
       if (category) url = url.concat(`&category=${category}`);
 
-      const { data } = await axios.get(url);
+ 
+      const { data } = await axios.get(encodeURI(url));
       dispatch(FetchBooksSuccess(data.books, data.pageCount, data.itemCount));
     } catch (err) {
-      dispatch(FetchBooksFail(err.response.data.error.message));
+       dispatch(FetchBooksFail(err.response.data.error.message));
     }
   };
 };

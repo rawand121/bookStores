@@ -61,16 +61,16 @@ const getUsedBooks = async (req, res, next) => {
     if (writer) query = { ...query, writer: writer };
     if (category) query = { ...query, category: category };
 
+
     const books = await UsedBooks.find(query)
+    .skip(
+      parseInt(req.query.limit) * parseInt(req.query.page) -
+      parseInt(req.query.limit)
+      )
+      .limit(parseInt(req.query.limit))
       .populate({
         path: "author",
       })
-
-      .skip(
-        parseInt(req.query.limit) * parseInt(req.query.page) -
-          parseInt(req.query.limit)
-      )
-      .limit(parseInt(req.query.limit))
       .exec();
 
     const itemCount = books.length;
@@ -82,11 +82,9 @@ const getUsedBooks = async (req, res, next) => {
         new ErrorHandler("Nothing Found match with your search :( ", 404)
       );
     }
-
     res.status(200).json({ books, pageCount, itemCount });
   } catch (err) {
-    console.log(err);
-    next(new ErrorHandler(err.message, 500));
+    return next(new ErrorHandler(err.message, 500));
   }
 };
 
