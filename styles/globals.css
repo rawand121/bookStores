@@ -191,6 +191,8 @@ table tbody[data-test="table-body"] tr td:nth-of-type(7) {
     margin: 0 20px;
   }
 }
+
+
 @media only screen and (max-width: 580px) {
   .allBoxes {
     text-align: center;

@@ -11,7 +11,7 @@ const About = () => {
     locale === "English" ? English : locale === "Kurdish" ? Kurdish : Arabic;
   return (
     <div className="row">
-      <div className="col-sm-12 col-md-6 position-relative text-center">
+      <div className="col-sm-12 col-md-6 position-relative text-center my-5">
         <Image
           src="/images/Xom.jpg"
           height="350px"

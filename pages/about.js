@@ -12,11 +12,3 @@ export default function AboutPage(props) {
     </Layout>
   );
 }
-
-// export const getServerSideProps = async ({ locale }) => {
-//   return {
-//     props: {
-//       language: locale,
-//     },
-//   };
-// };

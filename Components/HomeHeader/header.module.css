@@ -3,3 +3,17 @@
   height: 86vh;
   object-fit: cover;
 }
+
+@media only screen and (max-width: 730px) {
+  .bgImg {
+    width: fit-content;
+    height: fit-content;
+    object-position: -8rem;
+  }
+}
+
+/* @media only screen and (max-width: 730px) {
+  .bgImg {
+    width: fit-content;
+  }
+} */
