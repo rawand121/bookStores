@@ -5,3 +5,33 @@
 .input {
   padding: 10px 15px;
 }
+
+.signupForm {
+  width: 80%;
+}
+
+@media screen and (max-width: 770px) {
+  .label {
+    margin: 0 10px;
+  }
+
+  .signupHeader {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .signupForm {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .label {
+    width: 40% !important;
+    margin: 0 10px;
+  }
+
+  .signupForm {
+    width: 90%;
+  }
+}

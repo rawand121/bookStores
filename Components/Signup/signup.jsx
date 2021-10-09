@@ -44,7 +44,7 @@ const Signup = () => {
     if (
       user.confirmPassword &&
       user.password &&
-      // user.confirmPassword === user.password &&
+      user.confirmPassword === user.password &&
       user.email &&
       user.name &&
       user.phoneNumber
@@ -61,10 +61,10 @@ const Signup = () => {
 
   return (
     <>
-      <h1 className="text-center">{t.headerSignup}</h1>
+      <h1 className={classes.signupHeader}>{t.headerSignup}</h1>
       <div className="row">
-        <div className="col-sm-12 col-md-6 text-center d-flex align-items-center">
-          <div style={{ width: "80%" }}>
+        <div className="col-sm-12 col-md-6 text-center d-flex align-items-center mt-3">
+          <div className={classes.signupForm}>
             <div className="mb-4 d-flex align-items-center">
               <label
                 htmlFor="exampleInputUsername"
@@ -108,6 +108,7 @@ const Signup = () => {
                 name="phoneNumber"
                 type="text"
                 className={classes.input + " form-control"}
+                placeholder="7701234567"
                 onChange={onChange}
                 id="exampleInputPhone"
                 aria-describedby="emailHelp"

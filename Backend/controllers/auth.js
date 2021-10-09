@@ -6,13 +6,17 @@ import bcrypt from "bcrypt";
 const signupUser = async (req, res, next) => {
   try {
     const { email, password, name, phoneNumber, confirmPassword } = req.body;
-    if (confirmPassword === password) {
-      next(new ErrorHandler("You passwords is not match.", 401));
+    if (confirmPassword !== password) {
+      next(new ErrorHandler("Your passwords is not match.", 401));
     }
     const emailExist = await UserModel.findOne({
-      $or: [{ $phoneNumber: { $eq: phoneNumber } }, { $email: { $eq: email } }],
+      $or: [
+        { phoneNumber: { $eq: phoneNumber } },
+        { email: { $eq: email.toLowerCase() } },
+      ],
     });
     if (emailExist) {
+      console.log(emailExist);
       return next(
         new ErrorHandler(
           "Email Or Phone Number Exist, please try another email",
