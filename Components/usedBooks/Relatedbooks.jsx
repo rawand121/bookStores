@@ -9,13 +9,12 @@ import English from "../../translate/english";
 import Kurdish from "../../translate/kurdish";
 import Arabic from "../../translate/arabic";
 
-
 const Relatedbooks = (props) => {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const {locale} = useRouter()
-  
+  const { locale } = useRouter();
+
   const t =
     locale === "English" ? English : locale === "Kurdish" ? Kurdish : Arabic;
   useEffect(async () => {
@@ -43,13 +42,9 @@ const Relatedbooks = (props) => {
       {books.map((book) => {
         if (book !== null) {
           return (
-            <div
-              key={book._id}
-              className="card mb-2"
-              style={{ maxWidth: "540px" }}
-            >
+            <div key={book._id} className={"card mb-2 " + classes.relatedBooks}>
               <div className="row g-0">
-                <div className="col-md-4 ">
+                <div className="col-md-4 text-center">
                   <Image
                     src={book.image.url}
                     alt="IMG"
@@ -59,14 +54,15 @@ const Relatedbooks = (props) => {
                 </div>
                 <div className="col-md-8 d-flex flex-column pb-3">
                   <div className="card-body">
-                    <h5 className="card-title">{book.name}</h5>
+                    <Link href={`/books/${book._id}`}>
+                      <h5 className="card-title" style={{ cursor: "pointer" }}>
+                        {book.name}
+                      </h5>
+                    </Link>
                     <p className={"card-text " + classes.description}>
                       {book.description.substring(0, 50) + "..."}
                     </p>
                   </div>
-                  <Link href={`/books/${book._id}`}>
-                    <a className={"btn " + classes.readMoreBtn}>Read More</a>
-                  </Link>
                 </div>
               </div>
             </div>

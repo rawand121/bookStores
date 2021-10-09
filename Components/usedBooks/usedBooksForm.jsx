@@ -4,7 +4,6 @@ import English from "../../translate/english";
 import Kurdish from "../../translate/kurdish";
 import Arabic from "../../translate/arabic";
 
-
 const UsedBooksForm = (props) => {
   const [name, setName] = useState();
   const [price, setPrice] = useState();
@@ -15,7 +14,7 @@ const UsedBooksForm = (props) => {
   const [image, setImage] = useState();
   const [address, setAddress] = useState();
   const [typeOfTransaction, setType] = useState();
-  const {locale } = useRouter()
+  const { locale } = useRouter();
   const t =
     locale === "English" ? English : locale === "Kurdish" ? Kurdish : Arabic;
 
@@ -78,9 +77,9 @@ const UsedBooksForm = (props) => {
             onChange={(e) => setCategory(e.target.value)}
           >
             <option>{t.categoryBranches}</option>
-            <option value="roman">{t.novelCategory}</option>
-            <option value="dastan">{t.epicCategory}</option>
-            <option value="shi3r">{t.poemCategory}</option>
+            <option value="Roman">{t.novelCategory}</option>
+            <option value="Dastan">{t.epicCategory}</option>
+            <option value="Shi3r">{t.poemCategory}</option>
           </select>
         </div>
       </div>

@@ -86,9 +86,15 @@ const arabicTranslate = {
   note: "ملاحظة",
   getLocation: "احصل على العنوان",
   call: " اتصال",
-  relatedBooks: "کـتـێـبـی پـەیـوەنـدیدار",
+  relatedBooks: "كتب ذات صلة",
   dashboard: "داشبورد",
   writer: "كاتب",
+  Shi3r: "الشعر",
+  Roman: "رواية",
+  Dastan: "الملحم",
+  webName: "کتابي",
+  asc: "تصاعدي",
+  des: "تنازلي",
 };
 
 export default arabicTranslate;

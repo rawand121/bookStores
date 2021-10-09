@@ -8,9 +8,8 @@ import English from "../../translate/english";
 import Kurdish from "../../translate/kurdish";
 import Arabic from "../../translate/arabic";
 
-
 const Details = (props) => {
-  const {locale} = useRouter()
+  const { locale } = useRouter();
   const t =
     locale === "English" ? English : locale === "Kurdish" ? Kurdish : Arabic;
   useEffect(() => {
@@ -30,28 +29,27 @@ const Details = (props) => {
         <div id="fb-root"></div>
         <div className="col-sm-12 col-md-8">
           <h2 className="text-center">{props.book.name}</h2>
-          <p className={classes.property + " my-4"}>
+          <p className="my-4">
             {t.parts} : {props.book.parts}
           </p>
-          <p className={classes.property + " my-4"}>
+          <p className="my-4">
             {t.price} : {props.book.price} {t.iqdTerm}
           </p>
-          <p className={classes.property + " my-4"}>
+          <p className="my-4">
             {t.language} : {props.book.language}
           </p>
-          <p className={classes.property + " my-4"}>
-            {t.categorySection} : {props.book.category}
+          <p className="my-4">
+            {t.categorySection} : {t[props.book.category]}
           </p>
-          <p className={classes.property + " my-4"}>{props.book.description}</p>
+          <p className="my-4">{props.book.description}</p>
           <button
-            className="btn mb-4"
-            style={{ width: "25%" }}
+            className={"btn mb-4 " + classes.addToMyBasketButton}
             onClick={addToMyBasket(props.book)}
           >
             {t.addtoMybasket}
           </button>
         </div>
-        <div className="col-sm-12 col-md-4">
+        <div className="col-sm-12 col-md-4 text-center">
           <Image
             src={props.book.image.url}
             height="300px"

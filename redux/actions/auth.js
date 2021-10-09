@@ -5,9 +5,10 @@ export const registerUser = (user) => {
   return async (dispatch) => {
     dispatch(registerRequest());
     try {
-      await axios.post("/api/signup", user);
+      await axios.post("/api/auth/signup", user);
       dispatch(registerSuccess());
     } catch (err) {
+      console.log(err);
       dispatch(registerFail(err.response.data.message));
     }
   };

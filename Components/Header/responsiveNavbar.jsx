@@ -43,6 +43,13 @@ const responsiveNavbar = () => {
           id="offcanvasNavbar"
           aria-labelledby="offcanvasNavbarLabel"
         >
+          <a
+            className="navbar-brand text-center"
+            style={{ margin: "20px 0 10px", fontSize: "2rem" }}
+          >
+            {t.webName}
+          </a>
+          <hr />
           <div className="offcanvas-body">
             <ul className="navbar-nav">
               <li className={classes.listItemNavbar + " mx-3"}>

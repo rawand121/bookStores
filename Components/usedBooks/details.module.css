@@ -2,6 +2,12 @@
   font-size: 14px;
 }
 
+@media screen and (max-width: 1200px) {
+  .description {
+    font-size: 14px;
+  }
+}
+
 .readMoreBtn {
   cursor: pointer;
   font-size: 14px;
@@ -41,4 +47,15 @@
   background-color: #502e2d;
   height: 1px;
   width: 27%;
+}
+
+.relatedBooks {
+  max-width: 540px;
+}
+
+@media screen and (max-width: 768px) {
+  .relatedBooks {
+    max-width: none !important;
+    width: 25rem !important;
+  }
 }

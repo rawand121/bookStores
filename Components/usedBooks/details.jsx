@@ -7,10 +7,9 @@ import English from "../../translate/english";
 import Kurdish from "../../translate/kurdish";
 import Arabic from "../../translate/arabic";
 
-
 const Details = (props) => {
   console.log(props);
-  const {locale} = useRouter()
+  const { locale } = useRouter();
   const t =
     locale === "English" ? English : locale === "Kurdish" ? Kurdish : Arabic;
   useEffect(() => {
@@ -40,10 +39,16 @@ const Details = (props) => {
             {t.language} : {props.book.language}
           </p>
           <p className={classes.property + " my-4"}>
-            {t.categorySection} : {props.book.category}
+            {t.categorySection} : {t[props.book.category]}
           </p>
           <p className={classes.property + " my-4"}>{props.book.description}</p>
-          <a href={`tel: +964${props.book.author.phoneNumber.toString()}`} className="btn callBtn" style={{ width: "20%" }}>
+          <a
+            href={`tel: +964${props.book.author.phoneNumber
+              .toString()
+              .slice(1, -1)}`}
+            className="btn callBtn"
+            style={{ width: "20%" }}
+          >
             {t.call}{" "}
           </a>
         </div>

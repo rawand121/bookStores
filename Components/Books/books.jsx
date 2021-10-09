@@ -1,16 +1,24 @@
 import Post from "./post";
 import PaginationBar from "./pagination";
+import { useEffect, useState } from "react";
+import Spinner from "../spinner/Spinner";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import English from "../../translate/english";
 import Kurdish from "../../translate/kurdish";
 import Arabic from "../../translate/arabic";
-
+import Filter from "./filter";
 
 const Books = () => {
-  const {locale} = useRouter()
+  const [Reload, setReload] = useState(false);
+
+  const router = useRouter();
   const t =
-    locale === "English" ? English : locale === "Kurdish" ? Kurdish : Arabic;
+    router.locale === "English"
+      ? English
+      : router.locale === "Kurdish"
+      ? Kurdish
+      : Arabic;
 
   const { books, error } = useSelector((state) => state.Books);
 
@@ -21,10 +29,20 @@ const Books = () => {
       </h1>
     );
   }
-  if (books)
+
+  if (books && Object.keys(books).length === 0) {
+    return <Spinner />;
+  }
+
+  if (books.books)
     return (
       <div className="my-5">
-        <h2 className="text-center">{t.allBooks}</h2>
+        <div>
+          <h2 className="text-center" style={{ flex: 1 }}>
+            {t.allBooks}
+          </h2>
+          <Filter />
+        </div>
         <div className="row justify-content-sm-center my-4">
           {books.books.map((post) => {
             return <Post key={post._id} book={post} />;

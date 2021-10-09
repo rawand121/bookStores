@@ -17,6 +17,7 @@ const Signup = () => {
     name: "",
     email: "",
     password: "",
+    confirmPassword: "",
     phoneNumber: "",
   });
   const dispatch = useDispatch();
@@ -40,7 +41,22 @@ const Signup = () => {
   };
 
   const submitHandler = () => {
-    dispatch(registerUser(user));
+    if (
+      user.confirmPassword &&
+      user.password &&
+      // user.confirmPassword === user.password &&
+      user.email &&
+      user.name &&
+      user.phoneNumber
+    ) {
+      if (user.phoneNumber.trim().length === 10) {
+        dispatch(registerUser(user));
+      } else {
+        toast.error("Enter Valid Phone Number Please.");
+      }
+    } else {
+      toast.error("Passwords is not match..");
+    }
   };
 
   return (
@@ -122,6 +138,7 @@ const Signup = () => {
               <input
                 name="confirmPassword"
                 type="password"
+                onChange={onChange}
                 className={classes.input + " form-control"}
                 id="exampleInputPassword2"
               />

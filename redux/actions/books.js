@@ -1,7 +1,7 @@
 import * as t from "./actionType";
 import axios from "../../AxiosConfig";
 
-export const getBooks = (page, name, writer, category) => {
+export const getBooks = (page, name, writer, category, price) => {
   return async (dispatch) => {
     dispatch(requestBooks());
     try {
@@ -11,6 +11,7 @@ export const getBooks = (page, name, writer, category) => {
       }
       if (writer) url = url.concat(`&writer=${writer}`);
       if (category) url = url.concat(`&category=${category}`);
+      if (price) url = url.concat(`&price=${price}`);
 
       const { data } = await axios.get(encodeURI(url));
       dispatch(FetchBooksSuccess(data.books, data.pageCount, data.itemCount));

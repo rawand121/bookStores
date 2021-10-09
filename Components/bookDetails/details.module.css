@@ -42,3 +42,39 @@
   height: 1px;
   width: 27%;
 }
+
+.addToMyBasketButton {
+  width: 25% !important;
+}
+
+.Relatedbooks {
+  max-width: 540px;
+}
+
+@media screen and (max-width: 1200px) {
+  .addToMyBasketButton {
+    width: 40% !important;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Relatedbooks {
+    width: 25rem !important;
+    max-width: none !important;
+    margin: 0 auto;
+  }
+  .Relatedbooks > div {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .addToMyBasketButton {
+    width: 50% !important;
+  }
+  .Relatedbooks {
+    width: 15rem !important;
+  }
+}

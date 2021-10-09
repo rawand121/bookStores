@@ -6,13 +6,13 @@ import { wrapper } from "../../redux/store";
 
 export default function Home(props) {
   return (
-       <Layout title="Books">
-        <div className="container">
-          <Books />
-        </div>
-        <Footer />
-      </Layout>
-   );
+    <Layout title="Books">
+      <div className="container">
+        <Books />
+      </div>
+      <Footer />
+    </Layout>
+  );
 }
 
 export const getServerSideProps = wrapper.getServerSideProps(
@@ -22,6 +22,7 @@ export const getServerSideProps = wrapper.getServerSideProps(
       const name = query.name;
       const writer = query.writer;
       const category = query.category;
-      await store.dispatch(getBooks(pageNumber, name, writer, category));
+      const price = query.price;
+      await store.dispatch(getBooks(pageNumber, name, writer, category, price));
     }
 );
