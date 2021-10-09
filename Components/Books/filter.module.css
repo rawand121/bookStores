@@ -1,3 +1,6 @@
-.submitButton {
-  width: 120px !important;
+@media screen and (max-width: 1000px) {
+  .filterForm {
+    justify-content: center;
+    margin: 20px 0;
+  }
 }

@@ -1,13 +1,11 @@
 import Kurdish from "../../translate/kurdish";
 import English from "../../translate/english";
 import Arabic from "../../translate/arabic";
-import { getBooks } from "../../redux/actions/books";
-import { useDispatch } from "react-redux";
 import { useRouter } from "next/router";
+import classes from "./filter.module.css";
 
 const Filter = (props) => {
   const router = useRouter();
-  const dispatch = useDispatch();
   const t =
     router.locale === "English"
       ? English
@@ -50,7 +48,7 @@ const Filter = (props) => {
   };
 
   return (
-    <div className="d-flex align-items-center">
+    <div className={"d-flex align-items-center " + classes.filterForm}>
       <div className="inputField" style={{ margin: "0 10px" }}>
         <select
           className="form-select"
