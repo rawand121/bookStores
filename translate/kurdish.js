@@ -93,8 +93,8 @@ const kurdishTranslate = {
   Roman: "ڕۆمان",
   Dastan: "داستان",
   webName: "کتێبەکانم",
-  asc: "لە زۆر بۆ کەم",
-  des: "لە کەم بۆ زۆر",
+  des: "لە زۆر بۆ کەم",
+  asc: "لە کەم بۆ زۆر",
 };
 
 export default kurdishTranslate;
