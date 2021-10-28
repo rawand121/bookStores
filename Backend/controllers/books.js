@@ -8,7 +8,6 @@ const fetchAllBooks = async (req, res, next) => {
     await dbConfig();
 
     const { name, writer, category, price } = req.query;
-    console.log(price);
     let query = {};
     let sorted = { createdAt: -1 };
     if (name) query = { name: name };
